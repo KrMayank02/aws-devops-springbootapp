@@ -30,7 +30,7 @@ phases:
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       # Define container name and create imagedefinitions.json for ECS
-      - DOCKER_CONTAINER_NAME=springboot
+      - DOCKER_CONTAINER_NAME=springboot-ecr
       - printf '[{"name":"%s","imageUri":"%s"}]' $DOCKER_CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - echo $DOCKER_CONTAINER_NAME
       - echo Displaying imagedefinitions.json content
